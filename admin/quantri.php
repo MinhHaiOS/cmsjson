@@ -31,15 +31,10 @@ if(isset($_SESSION['login']))
       <table class="datatable" id="table_companies">
         <thead>
           <tr>
-            <th>Rank</th>
-            <th>Company name</th>
-            <th>Industries</th>
-            <th>Revenue</th>
-            <th>Year</th>
-            <th>Employees</th>
-            <th>Market cap</th>
-            <th>Headquarters</th>
-            <th>Functions</th>
+            <th>Tên Đăng Nhập</th>
+            <th>Email</th>
+            <th>Họ tên</th>
+            <th>Chức năng</th>
           </tr>
         </thead>
         <tbody>
@@ -54,58 +49,34 @@ if(isset($_SESSION['login']))
       <div class="lightbox_close"></div>
       <div class="lightbox_content">
         
-        <h2>Add company</h2>
+        <h2>Thêm thành viên</h2>
         <form class="form add" id="form_company" data-id="" novalidate>
           <div class="input_container">
-            <label for="rank">Rank: <span class="required">*</span></label>
+            <label for="user">Tài khoản: <span class="required">*</span></label>
             <div class="field_container">
-              <input type="number" step="1" min="0" class="text" name="rank" id="rank" value="" required>
+              <input type="text" class="text" name="user" id="user" value="" required>
             </div>
           </div>
           <div class="input_container">
-            <label for="company_name">Company name: <span class="required">*</span></label>
+            <label for="password">Mật khẩu: <span class="required">*</span></label>
             <div class="field_container">
-              <input type="text" class="text" name="company_name" id="company_name" value="" required>
+              <input type="password" class="text" name="password" id="password" value="" required>
             </div>
           </div>
           <div class="input_container">
-            <label for="industries">Industries: <span class="required">*</span></label>
+            <label for="email">Email: <span class="required">*</span></label>
             <div class="field_container">
-              <input type="text" class="text" name="industries" id="industries" value="" required>
+              <input type="email" class="text" name="email" id="email" value="" required>
             </div>
           </div>
           <div class="input_container">
-            <label for="revenue">Revenue: <span class="required">*</span></label>
+            <label for="fullname">Họ tên: <span class="required">*</span></label>
             <div class="field_container">
-              <input type="number" step="1" min="0" class="text" name="revenue" id="revenue" value="" required>
-            </div>
-          </div>
-          <div class="input_container">
-            <label for="fiscal_year">Fiscal year: <span class="required">*</span></label>
-            <div class="field_container">
-              <input type="number" min="0" class="text" name="fiscal_year" id="fiscal_year" value="" required>
-            </div>
-          </div>
-          <div class="input_container">
-            <label for="employees">Employees: <span class="required">*</span></label>
-            <div class="field_container">
-              <input type="number" min="0" class="text" name="employees" id="employees" value="" required>
-            </div>
-          </div>
-          <div class="input_container">
-            <label for="market_cap">Market cap: <span class="required">*</span></label>
-            <div class="field_container">
-              <input type="number" step="1" min="0" class="text" name="market_cap" id="market_cap" value="" required>
-            </div>
-          </div>
-          <div class="input_container">
-            <label for="headquarters">Headquarters: <span class="required">*</span></label>
-            <div class="field_container">
-              <input type="text" class="text" name="headquarters" id="headquarters" value="" required>
+              <input type="text" class="text" name="fullname" id="fullname" value="" required>
             </div>
           </div>
           <div class="button_container">
-            <button type="submit">Add company</button>
+            <button type="submit">Thêm thành viên</button>
           </div>
         </form>
         
