@@ -1,9 +1,9 @@
 <?php
 // Database details
 $db_server   = 'localhost';
-$db_username = '***';
-$db_password = '***';
-$db_name     = '***';
+$db_username = 'root';
+$db_password = '';
+$db_name     = 'test_db';
 
 // Get job (and id)
 $job = '';

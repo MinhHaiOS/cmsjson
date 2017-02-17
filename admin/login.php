@@ -19,7 +19,7 @@ else if(isset($_POST["submit"]))
 		{
 			$db = new database();			
 			$sql = "Select * from quan_tri_vien where Ten_dang_nhap = '".$user."' AND Mat_khau = '".md5($pass)."'";
-			echo $sql;
+			//echo $sql;
 			$db->setQuery($sql);
 			$result = $db->query();
 			if($result)

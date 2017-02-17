@@ -31,10 +31,15 @@ if(isset($_SESSION['login']))
       <table class="datatable" id="table_companies">
         <thead>
           <tr>
-            <th>Tên đăng nhập</th>
-            <th>Email</th>
-            <th>Họ tên</th>
-            <th>Chức năng</th>
+            <th>Rank</th>
+            <th>Company name</th>
+            <th>Industries</th>
+            <th>Revenue</th>
+            <th>Year</th>
+            <th>Employees</th>
+            <th>Market cap</th>
+            <th>Headquarters</th>
+            <th>Functions</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +50,7 @@ if(isset($_SESSION['login']))
 
     <div class="lightbox_bg"></div>
 
-    <div class="lightbox_container">
+    <div class="lightbox_container" >
       <div class="lightbox_close"></div>
       <div class="lightbox_content">
         
