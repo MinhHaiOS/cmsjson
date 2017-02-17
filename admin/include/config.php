@@ -2,7 +2,7 @@
 session_start();
 define('BASEURL', '../layout');
 define('HOST', 'localhost');
-define('DATABASE','news_qh');
+define('DATABASE','news_hq');
 define('USER','root');
 define('PASSWORD','');
 define('BASEVIEW','../../views');

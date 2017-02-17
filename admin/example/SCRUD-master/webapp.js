@@ -5,14 +5,14 @@ $(document).ready(function(){
     "ajax": "data.php?job=get_companies",
     "columns": [
       { "data": "rank" },
-      { "data": "company_name","sClass": "company_name" },
+      { "data": "company_name",   "sClass": "company_name" },
       { "data": "industries" },
-      { "data": "revenue","sClass": "integer" },
-      { "data": "fiscal_year","sClass": "integer" },
-      { "data": "employees","sClass": "integer" },
-      { "data": "market_cap","sClass": "integer" },
+      { "data": "revenue",        "sClass": "integer" },
+      { "data": "fiscal_year",    "sClass": "integer" },
+      { "data": "employees",      "sClass": "integer" },
+      { "data": "market_cap",     "sClass": "integer" },
       { "data": "headquarters" },
-      { "data": "functions","sClass": "functions" }
+      { "data": "functions",      "sClass": "functions" }
     ],
     "aoColumnDefs": [
       { "bSortable": false, "aTargets": [-1] }
@@ -25,7 +25,7 @@ $(document).ready(function(){
         "sNext":        " ",
         "sLast":        " ",
       },
-      "sLengthMenu":    "Số trường mỗi trang : _MENU_",
+      "sLengthMenu":    "Records per page: _MENU_",
       "sInfo":          "Total of _TOTAL_ records (showing _START_ to _END_)",
       "sInfoFiltered":  "(filtered from _MAX_ total records)"
     }
@@ -96,7 +96,6 @@ $(document).ready(function(){
   });
   // Lightbox close button
   $(document).on('click', '.lightbox_close', function(){
-	$('#side-menu').show();
     hide_lightbox();
   });
   // Escape keyboard key
@@ -115,7 +114,6 @@ $(document).ready(function(){
   // Add company button
   $(document).on('click', '#add_company', function(e){
     e.preventDefault();
-	$('#side-menu').hide();
     $('.lightbox_content h2').text('Add company');
     $('#form_company button').text('Add company');
     $('#form_company').attr('class', 'form add');

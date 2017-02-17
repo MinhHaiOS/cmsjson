@@ -1,5 +1,4 @@
- <!-- jQuery -->
-    <script src="layout/vendor/jquery/jquery.min.js"></script>
+ 
 
     <!-- Bootstrap Core JavaScript -->
     <script src="layout/vendor/bootstrap/js/bootstrap.min.js"></script>

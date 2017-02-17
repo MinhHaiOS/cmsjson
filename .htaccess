@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+Options All -Indexes
+RewriteRule ^trang-chu.qh$ trangchu.php?view=1
+RewriteRule ^tin-(.*)-([0-9]+).qh$ trangchu.php?view=2&ten=$1&idtin=$2
+RewriteRule ^danhmuc-(.*)-([0-9]+).qh$ trangchu.php?view=3&ten=$1&iddanhmuc=$2

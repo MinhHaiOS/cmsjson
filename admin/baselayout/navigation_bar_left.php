@@ -18,11 +18,9 @@
                             <a href="#"><i class="fa fa-newspaper-o fa-fw"></i>Tin tức<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                             	<li>
-                                    <a href="tintuc.php">Tin tức</a>
+                                    <a href="tintuc.php">Quản trị tin tức</a>
                                 </li>
-                                <li>
-                                    <a href="themtin.php">Thêm tin tức</a>
-                                </li>
+
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -30,22 +28,16 @@
                             <a href="#"><i class="fa fa-american-sign-language-interpreting fa-fw"></i> Danh Mục<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                             	<li>
-                                    <a href="danhmuc.php">Tin tức</a>
+                                    <a href="danhmuc.php">Quản trị danh mục</a>
                                 </li>
-                                <li>
-                                    <a href="themdanhmuc.php">Thêm danh mục</a>
-                                </li> 
                             </ul>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Quản trị viên<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                             	<li>
-                                    <a href="quantri.php">Tin tức</a>
+                                    <a href="quantri.php">Quản trị thành viên</a>
                                 </li>
-                                <li>
-                                    <a href="themquantri.php">Thêm quản trị</a>
-                                </li> 
                             </ul>
                         </li>
                         

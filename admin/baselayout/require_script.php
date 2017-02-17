@@ -12,7 +12,7 @@
     
     <script charset="utf-8" src="//cdn.datatables.net/1.10.0/js/jquery.dataTables.js"></script>
     <script charset="utf-8" src="//cdn.jsdelivr.net/jquery.validation/1.13.1/jquery.validate.min.js"></script>
-    <script charset="utf-8" src="example/SCRUD-master/webapp.js"></script>
+    <script charset="utf-8" src="baselayout/main.js"></script>
 
 </body>
 
