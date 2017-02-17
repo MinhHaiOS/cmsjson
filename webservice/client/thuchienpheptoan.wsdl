@@ -1,0 +1,102 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:thuchienpheptoan" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:thuchienpheptoan">
+<types>
+<xsd:schema targetNamespace="urn:thuchienpheptoan">
+<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+</xsd:schema>
+</types>
+<message name="phep_congRequest">
+<part name="a" type="xsd:interger"/>
+<part name="b" type="xsd:integer"/>
+</message>
+<message name="phep_congResponse">
+<part name="return" type="xsd:integer"/>
+</message>
+<message name="phep_truRequest">
+<part name="a" type="xsd:interger"/>
+<part name="b" type="xsd:integer"/>
+</message>
+<message name="phep_truResponse">
+<part name="return" type="xsd:integer"/>
+</message>
+<message name="phep_nhanRequest">
+<part name="a" type="xsd:interger"/>
+<part name="b" type="xsd:integer"/>
+</message>
+<message name="phep_nhanResponse">
+<part name="return" type="xsd:integer"/>
+</message>
+<message name="phep_chiaRequest">
+<part name="a" type="xsd:decimal"/>
+<part name="b" type="xsd:decimal"/>
+</message>
+<message name="phep_chiaResponse">
+<part name="return" type="xsd:decimal"/>
+</message>
+<portType name="Thá»±c hiá»‡n cÃ¡c phÃ©p toÃ¡nPortType">
+<operation name="phep_cong">
+<documentation>Thá»±c hiá»‡n phÃ©p cá»™ng cho 2 sá»‘</documentation>
+<input message="tns:phep_congRequest"/>
+<output message="tns:phep_congResponse"/>
+</operation>
+<operation name="phep_tru">
+<documentation>Thá»±c hiá»‡n phÃ©p trá»« cho 2 sá»‘</documentation>
+<input message="tns:phep_truRequest"/>
+<output message="tns:phep_truResponse"/>
+</operation>
+<operation name="phep_nhan">
+<documentation>Thá»±c hiá»‡n phÃ©p nhÃ¢n cho 2 sá»‘</documentation>
+<input message="tns:phep_nhanRequest"/>
+<output message="tns:phep_nhanResponse"/>
+</operation>
+<operation name="phep_chia">
+<documentation>Thá»±c hiá»‡n phÃ©p chia cho 2 sá»‘</documentation>
+<input message="tns:phep_chiaRequest"/>
+<output message="tns:phep_chiaResponse"/>
+</operation>
+</portType>
+<binding name="Thá»±c hiá»‡n cÃ¡c phÃ©p toÃ¡nBinding" type="tns:Thá»±c hiá»‡n cÃ¡c phÃ©p toÃ¡nPortType">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="phep_cong">
+<soap:operation soapAction="urn:thuchienpheptoan#phep_cong" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="phep_tru">
+<soap:operation soapAction="urn:thuchienpheptoan#phep_tru" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="phep_nhan">
+<soap:operation soapAction="urn:thuchienpheptoan#phep_nhan" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="phep_chia">
+<soap:operation soapAction="urn:thuchienpheptoan#phep_chia" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:thuchienpheptoan" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+</binding>
+<service name="Thá»±c hiá»‡n cÃ¡c phÃ©p toÃ¡n">
+<port name="Thá»±c hiá»‡n cÃ¡c phÃ©p toÃ¡nPort" binding="tns:Thá»±c hiá»‡n cÃ¡c phÃ©p toÃ¡nBinding">
+<soap:address location="http://127.0.0.1:81/demo/server/server_wsdl.php"/>
+</port>
+</service>
+</definitions>

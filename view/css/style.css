@@ -1,0 +1,24 @@
+/* CSS Document */
+.container
+{
+	margin:0 auto;
+	width:70%;
+	height:3000px;
+	background:#FFFFFF;
+}
+body
+{
+	background:#28C0C3;
+}
+.navigation_bar
+{
+	width:70%;
+	height:auto;
+	float:right;
+}
+.logo
+{
+	margin-top:2%;
+	width:30%;
+	float:left;
+}
