@@ -2,7 +2,7 @@
 
 include_once('../library/SOAP/lib/nusoap.php');
 
-$soap_client = new nusoap_client("http://127.0.0.1:81/demo/server/server.php");
+$soap_client = new nusoap_client("http://127.0.0.1:81/cmsjson/webservice/server/server.php");
 
 $error = $soap_client->getError();
 

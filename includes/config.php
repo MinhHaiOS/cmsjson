@@ -2,7 +2,7 @@
 session_start();
 define('BASEURL', '../layout');
 define('HOST', 'localhost');
-define('DATABASE','shop_may_tinh');
+define('DATABASE','news_hq');
 define('USER','root');
 define('PASSWORD','');
 define('BASEVIEW','../../views');

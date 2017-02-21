@@ -10,9 +10,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="layout/dist/js/sb-admin-2.js"></script>
     
-    <script charset="utf-8" src="layout/js/jquery.dataTables.js"></script>
+     <script charset="utf-8" src="layout/js/jquery.dataTables.js"></script>
     <script charset="utf-8" src="layout/js/jquery.validate.min.js"></script>
-    <script charset="utf-8" src="baselayout/main.js"></script>
+    <script charset="utf-8" src="baselayout/main_tintuc.js"></script>
 
 </body>
 

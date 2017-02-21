@@ -2,11 +2,10 @@ $(document).ready(function(){
   
   // On page load: datatable
   var table_companies = $('#table_companies').dataTable({
-	"ajax": "ajax.php?type=userinfo",
+	"ajax": "ajax_3.php?type=categoriesinfo",
     "columns": [
-      { "data": "Ten_dang_nhap"},
-      { "data": "Email"},
-      { "data": "Ho_ten" },
+      { "data": "ten_the_loai_chi_tiet"},
+      { "data": "ma_the_loai"},
       { "data": "functions", "sClass": "functions"}
     ],
     "aoColumnDefs": [
@@ -112,16 +111,44 @@ $(document).ready(function(){
   $(document).on('click', '#add_company', function(e){
     e.preventDefault();
 	$('#side-menu').hide();
-    $('.lightbox_content h2').text('Thêm thành viên');
-    $('#form_company button').text('Thêm thành viên');
+    $('.lightbox_content h2').text('Thêm thể loại chi tiết');
+    $('#form_company button').text('Thêm thể loại chi tiết');
     $('#form_company').attr('class', 'form add');
     $('#form_company').attr('data-id', '');
     $('#form_company .field_container label.error').hide();
     $('#form_company .field_container').removeClass('valid').removeClass('error');
-    $('#form_company #email').val('');
-    $('#form_company #password').val('');
-    $('#form_company #user').val('');
-    $('#form_company #fullname').val('');
+    $('#form_company #cate_name').val('');
+	var requestt = $.ajax({
+		url:          'ajax_3.php',
+        cache:        false,
+        data:         {
+				type : 'getinfo_cate',
+				
+			},
+        dataType:     'json',
+        contentType:  'application/json; charset=utf-8',
+        type:         'get',
+		success: function(output){
+			
+				var html_mtl = '';
+				if(output.result == "success")
+			{
+				$.each(output.data,function (indx,val){
+						
+						html_mtl += "<option value='"+ val +"'>"+val +"</option>";
+					
+					
+					});
+					$('#cate_mtl').html(html_mtl);
+			}
+			
+			
+			}
+		
+		
+		
+		});
+    
 
     show_lightbox();
   });
@@ -137,14 +164,12 @@ $(document).ready(function(){
       hide_lightbox();
       show_loading_message();
       var request   = $.ajax({
-        url:          'ajax.php',
+        url:          'ajax_3.php',
         cache:        false,
         data:         {
-				type : 'add_user',
-				user : $('#user').val(),
-				pass : $('#password').val(),
-				email: $('#email').val(),
-				fullname : $('#fullname').val()
+				type : 'add_cate',
+				cate_mtl : $('#cate_mtl').val(),
+				cate_name : $('#cate_name').val(),
 			},
         dataType:     'json',
         contentType:  'application/json; charset=utf-8',
@@ -157,8 +182,8 @@ $(document).ready(function(){
 		  $('#side-menu').show();
           table_companies.api().ajax.reload(function(){
             hide_loading_message();
-            var company_name = $('#user').val();
-            show_message("Thành viên '" + company_name + "' được thêm thành công", 'success');
+            var company_name = $('#cate_name').val();
+            show_message("Thể loại '" + company_name + "' được thêm thành công", 'success');
           }, true);
         } else {
 			$('#side-menu').show();
@@ -191,10 +216,10 @@ $(document).ready(function(){
     var id      = $(this).data('id');
 	//console.log(id);
     var request = $.ajax({
-      url:          'ajax.php',
+      url:          'ajax_3.php',
       cache:        false,
 	  data :{
-		  type : 'get_user',
+		  type : 'get_cate_id',
 		  id : id
 		  },
       dataType:     'json',
@@ -206,16 +231,45 @@ $(document).ready(function(){
 
 		 //console.log(output.data);
 		
-        $('.lightbox_content h2').text('Chỉnh sửa thành viên');
-        $('#form_company button').text('Sửa thành viên');
+        $('.lightbox_content h2').text('Chỉnh sửa thể loại');
+        $('#form_company button').text('Sửa thể loại');
         $('#form_company').attr('class', 'form edit');
         $('#form_company').attr('data-id', id);
         $('#form_company .field_container label.error').hide();
         $('#form_company .field_container').removeClass('valid').removeClass('error');
-        $('#form_company #user').val(output.data[0].tendangnhap);
-        $('#form_company #email').val(output.data[0].email);
-        $('#form_company #fullname').val(output.data[0].hoten);
-        $('#form_company #password').val('');
+        $('#form_company #cate_name').val(output.data[0].tentheloai);
+		var ids = output.data[0].matheloai;
+		var requestt = $.ajax({
+		url:          'ajax_3.php',
+        cache:        false,
+        data:         {
+				type : 'getinfo_cate',
+				
+			},
+        dataType:     'json',
+        contentType:  'application/json; charset=utf-8',
+        type:         'get',
+		success: function(output){
+			
+				var html_mtl = '';
+				if(output.result == "success")
+			{
+				$.each(output.data,function (indx,val){
+						
+						html_mtl += "<option value='"+ val +"'";
+					if(ids == val) html_mtl += "selected";
+					html_mtl += ">" + val +"</option>";
+					});
+					$('#cate_mtl').html(html_mtl);
+			}
+			
+			
+			}
+		
+		
+		
+		});
+        
         //$('#form_company #fiscal_year').val(output.data[0].fiscal_year);
         //$('#form_company #employees').val(output.data[0].employees);
        //$('#form_company #market_cap').val(output.data[0].market_cap);
@@ -245,9 +299,9 @@ $(document).ready(function(){
       show_loading_message();
       var id        = $('#form_company').attr('data-id');
       var form_data = $('#form_company').serialize();
-	 // console.log(form_data);
+	  console.log(form_data);
       var request   = $.ajax({
-        url:          'ajax.php?type=edit_user&id=' + id,
+        url:          'ajax_3.php?type=edit_cate_id&id=' + id,
         cache:        false,
         data:         form_data,
         dataType:     'json',
@@ -260,8 +314,8 @@ $(document).ready(function(){
           table_companies.api().ajax.reload(function(){
             hide_loading_message();
 			$('#side-menu').show();
-            var company_name = $('#user').val();
-            show_message("Tài khoản '" + company_name + "' chỉnh sửa thành công.", 'success');
+            var company_name = $('#cate_name').val();
+            show_message("Thể loại '" + company_name + "' chỉnh sửa thành công.", 'success');
           }, true);
         } else {
           hide_loading_message();
@@ -284,9 +338,9 @@ $(document).ready(function(){
     if (confirm("Bạn có chắc là muốn xóa '" + company_name + "' ?")){
       show_loading_message();
       var id      = $(this).data('id');
-	 // console.log(id);
+	  console.log(id);
       var request = $.ajax({
-        url:          'ajax.php?type=xoa_user&id=' + id,
+        url:          'ajax_3.php?type=delete_cate&id=' + id,
         cache:        false,
         dataType:     'json',
         contentType:  'application/json; charset=utf-8',
@@ -298,7 +352,7 @@ $(document).ready(function(){
           // Reload datable
           table_companies.api().ajax.reload(function(){
             hide_loading_message();
-            show_message("Tài khoản '" + company_name + "' đã xóa thành công.", 'success');
+            show_message("Thể loại '" + company_name + "' đã xóa thành công.", 'success');
           }, true);
         } else {
 			$('#side-menu').show();

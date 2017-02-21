@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Trang Tin tức</a>
+                <a class="navbar-brand" href="trang-chu.qh">Trang Tin tức</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -20,11 +20,9 @@
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh Mục tin tức<b class="caret"></b></a>
                         <ul class="dropdown-menu multi-level">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <?php foreach($the_loai as $show) { ?>
+                        <li><a href="danhmuc-<?php echo $show->Ten_the_loai; ?>-<?php echo $show->Ma_the_loai; ?>.qh"><?php echo $show->Ten_the_loai ?></a></li>
+                        <?php } ?>
                         </ul>
                         
                     </li>

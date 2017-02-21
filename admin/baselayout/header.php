@@ -10,7 +10,7 @@
 
     <title><?php echo $title; ?></title>
 
-	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Oxygen:400,700">
+	<link rel="stylesheet" href="baselayout/oxygen.css">
     <!-- Bootstrap Core CSS -->
     <link href="layout/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,7 +32,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script charset="utf-8" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--<script charset="utf-8" src="layout/js/jquery.min.js"></script> -->
 
 </head>
 
